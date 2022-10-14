@@ -3,28 +3,17 @@ package main
 import (
 	"fmt"
 
-	"github.com/pro-grammer206/gopher_coder/needForSpeed"
+	"github.com/pro-grammer206/gopher_coder/grossStore"
 )
 
 const OvenTime = 40
 
 func main() {
-	speed := 5
-	batteryDrain := 2
-	car:=needForSpeed.NewCar(speed,batteryDrain)
-	 distance := 100
- track := needForSpeed.NewTrack(distance)
-
-	fmt.Println(needForSpeed.CanFinish(car, track))
-
+	// fmt.Println(bookingUpForBeauty.HasPassed("July 25, 2019 13:45:00"))
+bill := map[string]int{"carrot": 12, "grapes": 3}
+qty, ok := grossStore.GetItem(bill, "carrot")
+fmt.Println(qty)
+// Output: 12
+fmt.Println(ok)
 }
 
-func RemainingOvenTime(actual int) int {
-	return OvenTime - actual
-}
-func PreparationTime(numberOfLayers int) int {
-	return numberOfLayers * 2
-}
-func ElapsedTime(numberOfLayers, actualMinutesInOven int) int {
-	return PreparationTime(numberOfLayers) + actualMinutesInOven
-}
